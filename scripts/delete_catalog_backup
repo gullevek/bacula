@@ -1,22 +1,20 @@
 #!/bin/sh
 #
+# Copyright (C) 2000-2015 Kern Sibbald
+# License: BSD 2-Clause; see file LICENSE-FOSS
+#
 # This script deletes a catalog dump
-#
-#
-#  Bacula® - The Network Backup Solution
-#
-#  Copyright (C) 2000-2014 Free Software Foundation Europe e.V.
-#
-#  The main author of Bacula is Kern Sibbald, with contributions from many
-#  others, a complete list can be found in the file AUTHORS.
-#
-#  You may use this file and others of this release according to the
-#  license defined in the LICENSE file, which includes the Affero General
-#  Public License, v3.0 ("AGPLv3") and some additional permissions and
-#  terms pursuant to its AGPLv3 Section 7.
-#
-#  Bacula® is a registered trademark of Kern Sibbald.
 #
 db_name=bacula
 
 rm -f /var/lib/bacula/${db_name}.sql
+
+#
+# We recommend that you email a copy of the bsr file that was
+#  made for the Job that runs this script to yourself.
+#  You just need to put the bsr file in /opt/bacula/bsr/catalog.bsr
+#  or adjust the script below.	Please replace all %xxx% with what
+#  is appropriate at your site.
+#
+#/opt/bacula/bin/bsmtp -h %smtp-server% -s "catalog.bsr" \
+#   %your-name@company.org% </opt/bacula/bsr/catalog.bsr
