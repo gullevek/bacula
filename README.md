@@ -5,7 +5,7 @@ Bacula backup server and client config files.
 The work is based on:
 https://gist.github.com/mashdot/2312522
 
-Base config is for debian bacula 7.x packages
+Base config is for debian bacula 9.x packages
 
 Differences: uses PostgreSQL, uses auto loader for multiple parallel backups
 

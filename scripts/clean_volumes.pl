@@ -13,13 +13,13 @@ use Getopt::Long;
 use IPC::Open2;
 use IO::Handle;
 
-my $bconsole = '/usr/bin/bconsole';
+my $bconsole = '/usr/sbin/bconsole';
 my (%opts, @purged, $pid);
 
 GetOptions(\%opts,
-   'verbose|v',
-   'test',
-   'dir=s'
+	'verbose|v',
+	'test',
+	'dir=s'
 );
 
 my ($IN, $OUT) = (IO::Handle->new(), IO::Handle->new());
@@ -87,7 +87,7 @@ sub delete_volumes
 				$filesize_sum += $filesize;
 				print convert_number($filesize)." ";
 			}
-            unlink ($file) if (!$opts{test});
+			unlink ($file) if (!$opts{test});
 			print "OK].\n" if ($opts{verbose});
 		}
 		else
@@ -106,7 +106,7 @@ sub convert_number
 	my $pos; # the original position in the labels array
 	# divied number until its division would be < 1024. count that position for label usage
 	for ($pos = 0; $number > 1024; $pos ++)
-	{   
+	{
 		$number = $number / 1024;
 	}
 	# before we return it, we format it [rounded to 2 digits, if has decimals, else just int]

@@ -4,7 +4,7 @@ if [ "$1" ];
 then
 	VERSION=$1;
 else
-	VERSION="9.4";
+	VERSION="9.6";
 fi;
 
 # if the wal files are not bz2 compressed, turn this off here

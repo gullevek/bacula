@@ -5,7 +5,7 @@ if [ "$1" ];
 then
 	VERSION=$1;
 else
-	VERSION="9.4";
+	VERSION="9.6";
 fi;
 
 # second parameter is port, if set use this, else ignore it
