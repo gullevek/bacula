@@ -13,7 +13,12 @@ use Getopt::Long;
 use IPC::Open2;
 use IO::Handle;
 
-my $bconsole = '/usr/sbin/bconsole';
+my $bconsole = '/usr/bin/bconsole';
+# if not found in bin, look in sbin
+if (! -f $bconsole)
+{
+	$bconsole = '/usr/sbin/bconsole';
+}
 my (%opts, @purged, $pid);
 
 GetOptions(\%opts,
